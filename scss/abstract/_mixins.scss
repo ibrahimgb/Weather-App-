@@ -9,12 +9,12 @@
     }
 }
 @mixin mqh($size) {
-    @media only screen and (min-height: $size) {
+    @media only screen and (min-height:$size) {
         @content;
     }
 }
 
-@mixin mawWminH($size1,$size2) {
+@mixin mqMaxWMinH($size1,$size2) {
     @media only screen and (max-width:$size1) and (min-height:$size2) {
         @content;        
     }

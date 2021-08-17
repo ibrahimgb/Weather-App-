@@ -1,0 +1,43 @@
+.dailyForecast {
+
+    .dailyForcast__title{
+      font-size: 1.1rem;
+      text-align: center;
+      margin-top: 0.5rem;
+      @include mq(768px) {
+        font-size: 1.3rem;
+      }
+    }
+  
+    .dailyForcast__content {
+      flex-grow: 1;
+      
+      @include flexCenter;
+      justify-content: space-evenly;
+      color: $font-color;
+      padding: 0.5rem 0;
+      
+  
+      .forcastDay {
+        background-color: indigo;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 0.9rem;
+        flex-basis: 0;
+        min-width: 0;
+        @include mq(375px) {
+          font-size: 1rem;
+        }
+
+        p{
+            img{
+                max-width:100%;
+                max-height:100%;
+            }
+        }
+      }
+    }
+  }
+  
