@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive wether app</title>
+    <script src="/dist/js/script.js" type="module" defer></script>
     <link rel="stylesheet" href="/dist/css/main.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,9 +13,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
 </head>
 <body>
-    <main>
+    <main class="fade-in">
         <h1 class="offscreen">responsive weather App Powered by the open weather A P I</h1>
-        <section id="searchBar" class="searchBar">
+        <section id="searchBar" class="searchBar fade-in">
             <form role="search" id="searchBar__form" class="searchBar__form">
                 <label for="searchBar__text" class="offscreen" >Enter a new location</label>
                 <input id="searchBar__text" type="text" class="searchBar__text" role="searchbox" size="40" autocomplete="off" placeholder="City, State, Country">
@@ -27,16 +28,18 @@
             </form>
         </section>
         <a href="#currentForcast" class="skip-Link">Skip to Current Conditions</a>
-        <section id="currentForecast" class="currentForecast" role="region" aria-labelledby="currentForcast__location">
-            <h2 id="currentForcast__location" class="currentForcast__location">
+        <section id="currentForecast" class="currentForecast fade-in" role="region" aria-labelledby="currentForcast__location">
+            <h2 id="currentForecast__location" class="currentForecast__location">
                 Current Conditions
             </h2>
-            <div id="currentForcast__conditions" class="currentForcast__conditions"></div>
+            <div id="currentForecast__conditions" class="currentForecast__conditions"></div>
         </section>
         <a href="#currentForcast" class="skip-Link offscreen">Skip to Six Day Forecast</a>
-        <nav id="nav-buttons" class="nav-buttons">
+        <nav id="nav-buttons" class="nav-buttons fade-in">
             <button id="getLocation" class="button" title="Get Location" aria-label="Git The Current Wethcer Conditions For Your Current Location">
-                <i class="fas fa-map-marker-alt"></i>
+                <div id="position">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
                 <div class="none">
                     <i class="fas fa-sync fa-spin"></i>
                 </div>
@@ -71,12 +74,12 @@
                 
             </button>
         </nav>
-        <hr>
-        <section id="daily-forecast" class="daily-forecast" role="region" aria-labelledby="weatherLocation">
+        <hr class="fade-in">
+        <section id="dailyForecast" class="dailyForecast" role="region" aria-labelledby="weatherLocation">
             <h2 id="dailyForcast__title" class="dailyForcast__title">Six Day Forcast</h2>
-            <h2 id="dailyForcast__title" class="dailyForcast__title"></h2>
-            <div id="dailyForcast__content" class="offScreen" aria-live="assertive"></div>
+            <div id="dailyForcast__content" class="offScreen dailyForcast__content" aria-live="assertive"></div>
         </section>
+        <p id="confirmation" class="offscreen" aria-live="assertive"></p>
     </main>
 </body>
 </html>
