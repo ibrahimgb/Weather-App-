@@ -1,4 +1,10 @@
-export { updateScreenReaderConfirmation } from "../../../../weather_app_tut-main/dist/js/domFunctions";
+
+export const setPlaceholderText = () => {
+    const input = document.getElementById("searchBar__text");
+    window.innerWidth < 400
+      ? (input.placeholder = "City, State, Country")
+      : (input.placeholder = "City, State, Country, or Zip Code");
+};
 
 export const addSpinner = (element) => {
     animateButton(element);
@@ -16,11 +22,26 @@ export const displayError = (headerMsg , srMsg) => {
     updateScreenReaderConfirmation(srMsg);
 };
 
+export const displayApiError = (statusCode) => {
+    const properMsg = toProperCase(statusCode.message);
+    updateWeatherLocationHeader(properMsg);
+    updateScreenReaderConfirmation(`${properMsg}. Please try again.`);
+};
+
+const toProperCase = (text) => {
+    const words = text.split(" ");
+    const properWords = words.map((word) => {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    });
+    return properWords.join(" ");
+};
+  
+
 const updateWeatherLocationHeader = (messge) => {
     const h1 = document.getElementById("currentForecast__location");
     h1.textContent = messge;
 };
 
-const updateScreenReaderConfirmation = (messge) => {
+export const updateScreenReaderConfirmation = (messge) => {
     document.getElementById("confirmation").textContent = messge;
 };
