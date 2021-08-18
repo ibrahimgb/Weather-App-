@@ -20,7 +20,9 @@
                 <label for="searchBar__text" class="offscreen" >Enter a new location</label>
                 <input id="searchBar__text" type="text" class="searchBar__text" role="searchbox" size="40" autocomplete="off" placeholder="City, State, Country">
                 <button id="searchBar__button" class="searchBar__button button" title="Submit Location" aria-label="Enter Zip Code or City , State, and Country to retrive Weather conditions">
-                    <i class="fa fa-search"></i>
+                    <div id="searchIcon">
+                        <i class="fa fa-search"></i>
+                    </div>
                     <div class="none">
                         <i class="fas fa-sync fa-spin"></i>
                     </div>
@@ -46,28 +48,37 @@
             </button>
 
             <button id="home" class="button" title="Home Weather" aria-label="Git The Current Wethcer Conditions For Your Home Location">
-                <i class="fas fa-home"></i>
+                <div id="homeIcon">
+                    <i class="fas fa-home"></i>
+                </div>
                 <div class="none">
                     <i class="fas fa-sync fa-spin"></i>
                 </div>
             </button>
 
             <button id="saveLocation" class="button" title="Save Location" aria-label="Save The Current location as Your Home Location">
-                <i class="fas fa-save"></i>
+                <div id="save">
+                    <i class="fas fa-save"></i>
+                </div>
                 <div class="none">
                     <i class="fas fa-sync fa-spin"></i>
                 </div>
             </button>
 
             <button id="unit" class="button" title="toggle measurement Units" aria-label="Toggle betwen imperiaal ant metric units">
-                <i class="fas fa-chart-bar"></i>
+                <div id="unitIcon">
+                    <i class="fas fa-chart-bar"></i>
+
+                </div>
                 <div class="none">
                     <i class="fas fa-sync fa-spin"></i>
                 </div>
             </button>
 
             <button id="refresh" class="button" title="Refresh Weather" aria-label="Refresh to the current weather conditions">
-                <i class="fas fa-sync-alt"></i>
+                <div id="refreshIcon">
+                    <i class="fas fa-sync-alt"></i>
+                </div>
                 <div class="none">
                     <i class="fas fa-sync fa-spin"></i>
                 </div>
