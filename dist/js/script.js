@@ -1,5 +1,5 @@
-import { setPlaceholderText , displayError , addSpinner , updateScreenReaderConfirmation , displayApiError} from "./domFunctions.js";
-import { setLocationObject , getHomeLocation , cleanText } from "./dataFunctions.js";
+import { setPlaceholderText , displayError , addSpinner , updateScreenReaderConfirmation , displayApiError , updateDisplay} from "./domFunctions.js";
+import { setLocationObject , getHomeLocation , cleanText , getCoordsFromApi , getWeatherFromCoords } from "./dataFunctions.js";
 import CurrentLocation from "./CurrentLocation.js";  
 
 const currentLoc = new CurrentLocation();
@@ -155,7 +155,8 @@ const submitNewLocation = async (event) => {
   };
 
 const updateDataAndDisplay = async (locationObj) => {
-    console.log(locationObj);
-    //const weatherJson = await getWeatherFromCoords(locationObj);
-    //if(weatherJson) updateDisplay(weatherJson,locationObj);
+    
+    const weatherJson = await getWeatherFromCoords(locationObj);
+    console.log(weatherJson);
+    if(weatherJson) updateDisplay(weatherJson,locationObj);
 }
